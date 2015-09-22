@@ -1,0 +1,5 @@
+add "Run Configurations"
+
+"VM arguments"
+ -javaagent:/Users/qaz/.m2/repository/org/springframework/springloaded/1.2.4.RELEASE/springloaded-1.2.4.RELEASE.jar -noverify
+
