@@ -2,6 +2,7 @@ package com.example.repository;
 
 import com.example.domain.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
@@ -37,6 +38,8 @@ public class CustomerRepository {
         String lastName = rs.getString("last_name");
         return new Customer(id, firstName, lastName);
     };
+
+//    private static final BeanPropertyRowMapper<Customer> customerRowMapper = new BeanPropertyRowMapper<Customer>(Customer.class);
 
     public List<Customer> findAll() {
         List<Customer> customers = jdbcTemplate.query(
